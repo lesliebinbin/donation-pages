@@ -2,7 +2,7 @@
   <component :is="pages[pageIndex]" />
   <div class="btn-group" role="group" aria-label="Basic example">
     <button class="btn btn-primary" @click="nextPage">
-      {{ pageIndex === pages.length - 1 ? "DonateNow" : "Next Step" }}
+      {{ pageIndex === pages.length - 1 ? "Submit" : "Next Step" }}
     </button>
     <button class="btn btn-secondary" @click="previousPage">Back</button>
   </div>
@@ -11,14 +11,13 @@
 <script>
 import DonationDetails from './components/sections/DonationDetails'
 import ContactDetails from './components/sections/ContactDetails'
-import PaymentDetails from './components/sections/PaymentDetails'
 
 export default {
   name: 'App',
   data() {
     return {
       pageIndex: 0,
-      pages: [DonationDetails, ContactDetails, PaymentDetails]
+      pages: [DonationDetails, ContactDetails]
     };
   },
   methods: {

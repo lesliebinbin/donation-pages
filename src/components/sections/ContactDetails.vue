@@ -1,44 +1,74 @@
 <template>
-    <h3>Please Enter Your Contact Details Below</h3>
-    <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-secondary">Personal Donation</button>
-        <button type="button" class="btn btn-secondary">Company Donation</button>
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-registration my-4">
+                    <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block">
+                            <img :src="imageUrl" alt="Sample photo" class="img-fluid" />
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-black">
+                                <h3 class="mb-5 text-uppercase">Contact Details</h3>
+                                <div class="row">
+                                    <b-tabs pills align="center" class="mb-4">
+                                        <b-tab title="Personal Donation">
+                                        </b-tab>
+                                        <b-tab title="Organisation Donation">
+                                        </b-tab>
+                                    </b-tabs>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" id="form3Example1m" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1m">First name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" id="form3Example1n" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1n">Last name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="email" class="form-control form-control-lg" />
+                                    <label class="form-label" for="email">Email</label>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="postal_address" class="form-control form-control-lg" />
+                                    <label class="form-label" for="postal_address">Postal Address (enter
+                                        manually)</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <form class="needs-validation" novalidate>
-        <div class="row align-items-center">
-            <div class="col-sm-2 mb-1">
-                <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="First name" v-model="contact.firstName"
-                    required>
-            </div>
-            <div class="col-sm-2 mb-1">
-                <label for="lastname">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Last name" v-model="contact.lastName"
-                    required>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" placeholder="jane.doe@example.com" required
-                    v-model="contact.email">
-            </div>
-        </div>
-        <div class="row">
-            <label class="col-sm-12 pt10 pb10" for="postalAddress">Postal Address <a href="javascript:;"
-                    class="expand-address pull-right" tabindex="0"><small>(enter manually)</small></a></label>
-            <input type="text" class="form-control" id="postalAddress" v-model="contact.postalAddress"
-                placeholder="Please enter your street address" />
-        </div>
-    </form>
 </template>
 <script>
 import { contact } from "../../states";
+import sekiro from "../../assets/sekiro.jpeg";
 export default {
     name: "DonationDetails",
     data() {
-        return { contact };
+        return { contact, imageUrl: sekiro };
     }
 }
 </script>
-<style scoped></style>
+<style scoped>
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+</style>
