@@ -2,7 +2,7 @@
     <div class="container py-5 h-20">
         <div class="row d-flex justify-content-center align-items-center h-20">
             <div class="col">
-                <div class="card card-registration my-4">
+                <div class="card card-donation my-4">
                     <div class="row g-0">
                         <div class="col-xl-6 d-none d-xl-block">
                             <img :src="imageUrl" alt="Sample photo" class="img-fluid" />
@@ -63,14 +63,14 @@ export default {
 </script>
 
 <style scoped>
-.card-registration .select-input.form-control[readonly]:not([disabled]) {
+.card-donation .select-input.form-control[readonly]:not([disabled]) {
     font-size: 1rem;
     line-height: 2.15;
     padding-left: .75em;
     padding-right: .75em;
 }
 
-.card-registration .select-arrow {
+.card-donation .select-arrow {
     top: 13px;
 }
 </style>
