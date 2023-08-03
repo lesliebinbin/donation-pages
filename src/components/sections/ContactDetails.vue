@@ -54,7 +54,7 @@
 import { contact } from "../../states";
 import sekiro from "../../assets/sekiro.jpeg";
 export default {
-    name: "DonationDetails",
+    name: "ContactDetails",
     data() {
         return { contact, imageUrl: sekiro };
     }
