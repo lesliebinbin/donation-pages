@@ -1,7 +1,7 @@
 const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: process.env.NODE_END == "production" ? "donation-pages" : "/",
+  publicPath: process.env.NODE_ENV == "production" ? "donation-pages" : "/",
   chainWebpack(config) {
     config.resolve.alias.set("vue", "@vue/compat");
     config.module
