@@ -14,3 +14,5 @@ export const donationOptions = [
       "to help drive innovative technology to improve diagnosis and treatment",
   },
 ];
+
+export const payments2UsFormUrl = "";
