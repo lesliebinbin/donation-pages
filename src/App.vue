@@ -1,35 +1,15 @@
 <template>
-  <component :is="pages[pageIndex]" />
-  <div class="btn-group" role="group" aria-label="Basic example">
-    <button class="btn btn-primary" @click="nextPage">
-      {{ pageIndex === pages.length - 1 ? "Submit" : "Next Step" }}
-    </button>
-    <button class="btn btn-secondary" @click="previousPage">Back</button>
-  </div>
+  <LeadingPage />
 </template>
 
 <script>
-import DonationDetails from './components/sections/DonationDetails'
-import ContactDetails from './components/sections/ContactDetails'
+import LeadingPage from './components/pages/LeadingPage'
 
 export default {
   name: 'App',
-  data() {
-    return {
-      pageIndex: 0,
-      pages: [DonationDetails, ContactDetails]
-    };
+  components: {
+    LeadingPage,
   },
-  methods: {
-    nextPage() {
-      if (this.pageIndex === this.pages.length - 1) return;
-      this.pageIndex = (this.pageIndex + 1) % this.pages.length;
-    },
-    previousPage() {
-      if (this.pageIndex === 0) return;
-      this.pageIndex = (this.pageIndex - 1) % this.pages.length;
-    }
-  }
 }
 </script>
 

@@ -41,13 +41,13 @@
 <script>
 import { donationOptions } from '../../constants/configuration';
 import { donation } from "../../states";
-import sekiro from "../../assets/sekiro.jpeg";
+import donate from "../../assets/donate.jpg";
 export default {
     name: "DonationDetails",
     data() {
         return {
             donationOptions: [],
-            imageUrl: sekiro,
+            imageUrl: donate,
         };
     },
     mounted() {

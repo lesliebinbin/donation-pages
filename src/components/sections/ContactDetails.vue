@@ -52,11 +52,11 @@
 </template>
 <script>
 import { contact } from "../../states";
-import sekiro from "../../assets/sekiro.jpeg";
+import donate from "../../assets/donate.jpg";
 export default {
     name: "ContactDetails",
     data() {
-        return { contact, imageUrl: sekiro };
+        return { contact, imageUrl: donate };
     }
 }
 </script>
