@@ -1,44 +1,50 @@
 <template>
-    <component :is="pages[pageIndex]" />
+    <LeadingPageHeader />
+    <component :is="sections[sectionIndex]" />
     <div class="btn-group" role="group" aria-label="Basic example">
-        <button class="btn btn-primary" @click="nextPage" v-if="showNextPage">
+        <button class="btn btn-primary" @click="nextSection" v-if="showNextSection">
             Next Step
         </button>
-        <button class="btn btn-primary" @click="submitPages" v-else>
+        <button class="btn btn-primary" @click="submitSections" v-else>
             Submit
         </button>
-        <button class="btn btn-secondary" @click="previousPage">Back</button>
+        <button class="btn btn-secondary" @click="previousSection">Back</button>
     </div>
 </template>
 <script>
-import DonationDetails from '../sections/DonationDetails'
-import ContactDetails from '../sections/ContactDetails'
+import DonationDetails from '../sections/donation/DonationDetails'
+import ContactDetails from '../sections/contact/ContactDetails'
+import LeadingPageHeader from '../headers/LeadingPageHeader';
+import Payments2UsPage from './Payments2UsPage';
 export default {
     name: 'LeadingPage',
+    components: {
+        LeadingPageHeader,
+        Payments2UsPage
+    },
     data() {
         return {
-            pageIndex: 0,
-            pages: [DonationDetails, ContactDetails]
+            sectionIndex: 0,
+            sections: [DonationDetails, ContactDetails]
         };
     },
     computed: {
-        showNextPage() {
-            return this.pageIndex < this.pages.length - 1;
+        showNextSection() {
+            return this.sectionIndex < this.sections.length - 1;
         },
     },
     methods: {
-        nextPage() {
-            if (this.pageIndex === this.pages.length - 1) return;
-            this.pageIndex = (this.pageIndex + 1) % this.pages.length;
+        nextSection() {
+            if (this.sectionIndex === this.sections.length - 1) return;
+            this.sectionIndex = (this.sectionIndex + 1) % this.sections.length;
         },
-        submitPages() {
-
+        submitSections() {
+            this.$emit('show-main-page');
         },
-        previousPage() {
-            if (this.pageIndex === 0) return;
-            this.pageIndex = (this.pageIndex - 1) % this.pages.length;
+        previousSection() {
+            if (this.sectionIndex === 0) return;
+            this.sectionIndex = (this.sectionIndex - 1) % this.sections.length;
         }
     }
 }
 </script>
-<style ></style>

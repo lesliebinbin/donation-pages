@@ -1,14 +1,22 @@
 <template>
-  <LeadingPage />
+  <LeadingPage v-if="!showMainPage" @show-main-page="showMainPage = true" />
+  <Payments2UsPage v-show="showMainPage" />
 </template>
 
 <script>
 import LeadingPage from './components/pages/LeadingPage'
+import Payments2UsPage from './components/pages/Payments2UsPage'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      showMainPage: false,
+    };
+  },
   components: {
     LeadingPage,
+    Payments2UsPage,
   },
 }
 </script>

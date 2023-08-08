@@ -21,24 +21,28 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <input type="text" id="form3Example1m" class="form-control form-control-lg" />
+                                            <input type="text" id="form3Example1m" class="form-control form-control-lg"
+                                                v-model="contact.firstName" />
                                             <label class="form-label" for="form3Example1m">First name</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <input type="text" id="form3Example1n" class="form-control form-control-lg" />
+                                            <input v-model="contact.lastName" type="text" id="form3Example1n"
+                                                class="form-control form-control-lg" />
                                             <label class="form-label" for="form3Example1n">Last name</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="email" id="email" class="form-control form-control-lg" />
+                                    <input type="email" id="email" class="form-control form-control-lg"
+                                        v-model="contact.email" />
                                     <label class="form-label" for="email">Email</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="postal_address" class="form-control form-control-lg" />
+                                    <input type="text" id="postal_address" class="form-control form-control-lg"
+                                        v-model="contact.postalAddress" />
                                     <label class="form-label" for="postal_address">Postal Address (enter
                                         manually)</label>
                                 </div>
@@ -51,8 +55,8 @@
     </div>
 </template>
 <script>
-import { contact } from "../../states";
-import donate from "../../assets/donate.jpg";
+import { contact } from "../../../states";
+import donate from "../../../assets/donate.jpg";
 export default {
     name: "ContactDetails",
     data() {
